@@ -53,6 +53,7 @@ var TemperatureInput = React.createClass({
 		// })
 
 		//state is managed by setState whereas props are sent. Props are sent when a component is built (ex: TemperatureInput tUnits="celsius") but not managed by anything.
+		//"this" refers to this component. when component is called, its attributes get sent.
 		this.props.onChange(event.target.value)
 	},
 	render: function(){
@@ -72,7 +73,7 @@ var Calculator = React.createClass({
 	//calculator will have state b/c it is the parent
 	getInitialState: function() {
 		return{
-			value: 0,
+			value: 32,
 			scale: 'c'
 		}
 	},
@@ -89,7 +90,7 @@ var Calculator = React.createClass({
 			scale: 'f',
 			value: value
 		})
-	}, 
+	}
 
 	render: function(){
 		// var userEnteredTemp = this.state.value;
